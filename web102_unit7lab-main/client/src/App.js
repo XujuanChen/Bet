@@ -46,7 +46,6 @@ const App = () => {
     }
 
     fetchPosts();
-
   }, [])
 
   // Sets up routes
@@ -66,7 +65,6 @@ const App = () => {
   ]);
 
   return ( 
-
     <div className="App">
 
       <div className="header">

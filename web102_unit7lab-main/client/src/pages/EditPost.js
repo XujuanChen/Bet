@@ -7,6 +7,7 @@ const EditPost = ({data}) => {
 
     const {id} = useParams();
     // const post = data.filter(item => item.id === id)[0];
+    const [post, setPost] = useState({title: "", author: "", description: ""})
     const updatePost = async (event) => {
         event.preventDefault();
         await supabase
@@ -15,7 +16,6 @@ const EditPost = ({data}) => {
         .eq('id', id);
         
         window.location = "/";
-
     }
 
     const deletePost = async (event) => {
@@ -27,7 +27,6 @@ const EditPost = ({data}) => {
         window.location = "http://localhost:3000/";
     }
 
-    const [post, setPost] = useState({title: "", author: "", description: ""})
     const handleChange = (event) => {
         const {name, value} = event.target;
         setPost( (prev) => {
